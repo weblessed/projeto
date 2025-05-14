@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/estilo.css">
+    <link rel="stylesheet" href="./assets/mq-estilo.css">
+    <link rel="shortcut icon" href="./assets/speed.png.png" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/velocidade.png" type="image/x-icon">
+    <title>Controle de Velocidade</title>
+</head>
+
+
+<body>
+   
+    
+  </body>
+
+    <main>
+        
+        <section id="login">
+            
+            <div id="imagem">
+            </div>
+            <div id="formulario">
+                <h1>Lazaro - Controle de Velocidade</h1>
+                <p>Bem-vindo novamente,Digite a Velocidade do veiculo e sua Placa.</p>
+                <p>Placa do veiculo: <input type="text" name="txtvei" id="txtvei"></p>
+                <p>Velocidade do Veiculo:<input type="number" name="txtvel" id="txtvel"> Km/h</p>
+                <input type="button" value="Processar" onclick="calcular()">
+                <div id="resp"></div>
+            </div>
+            
+
+        </section>
+    </main>
+
+    <script>
+        function calcular() {
+            var txtvei = window.document.getElementById('txtvei');
+            var txtvel = window.document.querySelector('input#txtvel');
+            var vei = String(txtvei.value);
+            var vel = Number(txtvel.value);
+            var resp = window.document.querySelector('div#resp');
+
+            resp.innerHTML = '';
+
+            if (vel > 90) {
+                resp.innerHTML += `<p>Placa do infrator: ${vei}.</p>`;
+                resp.innerHTML += `<p>Você foi multado por excesso de velocidade ${vel} Km/h</p>`;
+            } else {
+                resp.innerHTML += `<p>Você está dentro do limite de velocidade ${vel} Km/h</p>`;
+            }
+        }
+    </script>
+
+</body>
+
+</html>
