@@ -1,59 +1,92 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+<!-- HTML é a estrutura do inicial do codigo,ou seja,é o esqueleto. -->
 
 <head>
+    <!-- Head é basicamente é a cabeça do codigo. -->
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/estilo.css">
     <link rel="stylesheet" href="./assets/mq-estilo.css">
-    <link rel="shortcut icon" href="./assets/speed.png.png" type="image/x-icon">
-    <link rel="stylesheet" href="./assets/velocidade.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./assets/favicon.velocidade.png" type="image/x-icon">
+    <!-- <img src="./assets/speed.png.png" alt="Descrição da Imagem" class="imagem-responsiva"> -->
     <title>Controle de Velocidade</title>
+
 </head>
 
 
 <body>
-   
-    
-  </body>
+    <!-- Body é a tag que irá armazenar: textos, imagens, vídeos, botões, links, formulários, etc. -->
 
-    <main>
-        
-        <section id="login">
-            
-            <div id="imagem">
-            </div>
-            <div id="formulario">
-                <h1>Lazaro - Controle de Velocidade</h1>
-                <p>Bem-vindo novamente,Digite a Velocidade do veiculo e sua Placa.</p>
-                <p>Placa do veiculo: <input type="text" name="txtvei" id="txtvei"></p>
-                <p>Velocidade do Veiculo:<input type="number" name="txtvel" id="txtvel"> Km/h</p>
-                <input type="button" value="Processar" onclick="calcular()">
-                <div id="resp"></div>
-            </div>
-            
 
-        </section>
-    </main>
+</body>
 
-    <script>
-        function calcular() {
-            var txtvei = window.document.getElementById('txtvei');
-            var txtvel = window.document.querySelector('input#txtvel');
-            var vei = String(txtvei.value);
-            var vel = Number(txtvel.value);
-            var resp = window.document.querySelector('div#resp');
+<main>
+    <!-- Main é onde se localizará os titulos e paragrafos do textos. -->
 
-            resp.innerHTML = '';
+    <section id="login">
+        <!-- section indica que o conteúdo dentro dela forma uma seção distinta do documento, como um capítulo, introdução, notícias ou informações de contato.  -->
 
-            if (vel > 90) {
-                resp.innerHTML += `<p>Placa do infrator: ${vei}.</p>`;
-                resp.innerHTML += `<p>Você foi multado por excesso de velocidade ${vel} Km/h</p>`;
+        <div id="imagem">
+        </div>
+        <div id="formulario">
+
+            <!-- formulario:é a formulação onde armazenará as informações importantes do texto. -->
+            <h1>Lazaro - Controle de Velocidade</h1>
+            <p>Bem-vindo novamente</p>
+
+            <p>Digite a Velocidade do veiculo e sua Placa.</p>
+
+            <p>Placa do veiculo: <input type="text" name="txtvei" id="txtvei"></p>
+
+            <p>Velocidade do Veiculo:<input type="number" name="txtvel" id="txtvel"> Km/h</p>
+            <input type="button" value="Processar" onclick="calcular()">
+            <div id="resp"></div>
+            <div id="mult"></div>
+
+        </div>
+
+
+    </section>
+</main>
+
+<script>
+    // script indica que o conteúdo dentro dela forma uma seção distinta do documento, como um capítulo, introdução, notícias ou informações de contato. 
+
+    function calcular() {
+        // aqui se localizará os comandos para calcular e executar outras funções essenciais para o codigo.
+        var txtvei = window.document.getElementById('txtvei');
+        var txtvel = window.document.querySelector('input#txtvel');
+        var vei = String(txtvei.value);
+        var vel = Number(txtvel.value);
+        var resp = window.document.querySelector('div#resp');
+        var mult = window.document.querySelector('div#mult');
+
+        resp.innerHTML = '';
+        mult.innerHTML = ''; // Limpa a mensagem de multa anterior
+
+        if (vel > 100) {
+            // função de minima velocidade.
+            resp.innerHTML += `<p>Placa do infrator: ${vei}.</p>`;
+            resp.innerHTML += `<p>Você foi multado por excesso de velocidade ${vel} Km/h.</p>`;
+
+            // Lógica para definir o valor da multa
+            if (vel > 100 && vel <= 120) {
+                // função de velocidade mais a multa.
+                mult.innerHTML += `<p>Valor da multa: R$ 130,16 (Infração média + 4 Pontos na Carteira )</p>`;
+            } else if (vel > 120 && vel <= 150) {
+                mult.innerHTML += `<p>Valor da multa: R$ 195,23 (Infração grave + 5 Pontos na Carteira)</p>`;
             } else {
-                resp.innerHTML += `<p>Você está dentro do limite de velocidade ${vel} Km/h</p>`;
+                // Aqui será onde será o valor da multa.
+                mult.innerHTML += `<p>Valor da multa: R$ 880,41 (Infração gravíssima + 7 Pontos na Carteira)</p>`;
             }
+        } else {
+            resp.innerHTML += `<p>Você está dentro do limite de velocidade ${vel} Km/h.</p>`;
+            mult.innerHTML += `<p>Sem multa.</p>`;
         }
-    </script>
+    }
+</script>
 
 </body>
 
