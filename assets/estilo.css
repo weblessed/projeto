@@ -1,5 +1,8 @@
 @charset "UTF-8";
 
+/* Essas configurações são do celular. */
+
+
 /*configuração básicas, fazendo o reset da pagina
 sendo que a borda faça parte da pagina*/
 * {
@@ -7,68 +10,75 @@ sendo que a borda faça parte da pagina*/
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
+    /* *{ serve para term uma fonte nas letras e direcionamento nas letras. */
 }
 
 /*configuração básicas, fazendo o reset da pagina
 sendo que a borda faça parte da pagina*/
 body,
 html {
-  background-image: url(./velocidade.png);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
+    background-image: url(./velocidade.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
     height: 100vh;
     width: 100vw;
+    /* Utilizar para fazer a estrutura do css,e utilizar uma imagem de fundo e direcionamentode imagem. */
 }
 
-/*posicionar o main em relação a tela*/
+
 main {
     height: 100vh;
     width: 100vw;
+    /*posicionar o main em relação a tela*/
 }
 
 /*definir a possição da tela em relação a div de login*/
 section#login {
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
 
     background-color: rgb(11, 143, 6);
     width: 250px;
-    height: 515px;
+    height: 555px;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0px 0px 10px rgb(247, 222, 1);
-    
+
     transform: translate(-50%, -50%);
     transition: width .3s, height .3s;
     transition-timing-function: ease;
+    /* Posicionamento,tamanho e cor da section */
 }
 
 /*carregar uma imagem em firt mobile para ter tanto o fundo como a posição da imagem*/
 section#login>div#imagem {
     display: block;
-    background: #ff0000 url("./patternsbg.jpg") no-repeat;
+    background: #420effd7 url("./velocimetro.png") no-repeat;
     background-size: cover;
     background-position: left top;
-    height: 200px;
+    height: 150px;
+    /* Seção para utilizar uma imagem dentro do utilizador do site. */
 }
 
-/*seção de login terá um formulario onde sera possionado*/
 section#login>div#formulario {
     display: block;
     padding: 5px;
+    /*seção de login terá um formulario onde sera possionado*/
 }
 
-/*configuração básicas, fazendo o reset da pagina
-sendo que a borda faça parte da pagina*/
+
 div#formulario>h1 {
     text-align: center;
     margin-bottom: 10px;
+    /*configuração básicas, fazendo o reset da pagina
+sendo que a borda faça parte da pagina*/
 }
 
 div#formulario>p {
     font-size: 0.8em;
+    /* configuração para borda. */
 }
 
 /*configuração básicas, fazendo o reset da pagina
@@ -84,19 +94,24 @@ form>input {
     border: none;
     border-radius: 7px;
     cursor: pointer;
+    /* Isso significa que o estilo será aplicado apenas a inputs que estão no primeiro nível dentro do
+     <form>, e não a inputs que estejam aninhados dentro de outras tags (como <div> ou <span>) dentro do <form>. */
 }
 
 form>div.campo {
     background-color: #ff0000;
     display: block;
-    width: 99%;
+    width: 100%;
     height: 40px;
     border-radius: 7px;
     margin: 5px 0px;
+    /* permite agrupar e estilizar visualmente blocos de campos dentro de um formulário,
+     como um conjunto de inputs para endereço ou informações de contato */
 }
 
 div.campo>label {
     display: none;
+  /* O CSS div.campo > label { display: none; } oculta todas as tags <label> que são filhas diretas de uma div com a classe campo. */
 }
 
 div.campo>span {
@@ -104,6 +119,7 @@ div.campo>span {
     font-size: 2em;
     width: 40px;
     padding: 5px;
+    /* div.campo > span com as propriedades listadas serve para estilizar <span> */
 }
 
 div.campo>input {
@@ -115,28 +131,32 @@ div.campo>input {
     border-radius: 8px;
     padding: 4px;
     transform: translateY(-12px);
+    /* div.campo > input serve para estilizar elementos */
 }
 
 div.campo>input:focus-within {
     background-color: aliceblue;
+    /* div.campo>input:focus-within
+    coloração da div campo */
 }
 
 form>input[input=submit]:hover {
 
     background-color: #25504f;
+    /* form > input[type=submit]:hover serve para estilizar o botão de envio (<input type="submit">) de um formulário APENAS quando o mouse passa sobre ele. */
 
 }
 
 form>a.botao {
     display: block;
     text-align: center;
-    font-size: 10em;
+    font-size: 1em;
     width: 100%;
     height: 40px;
     padding-top: 5px;
     margin-top: 5px;
     background-color: white;
-    color: #25504f;
+    color: #502525;
     border: 1px solid #49a09d;
     border-radius: 7px;
     text-decoration: none;
@@ -147,5 +167,5 @@ form>a.botao:hover {
 }
 
 form>a.botao>span {
-    font-size: 1.8em;
+    font-size: 0.8em;
 }

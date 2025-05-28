@@ -1,3 +1,5 @@
+/*configuração básicas, fazendo o reset da pagina
+sendo que a borda faça parte da pagina*/
 @charset "UTF-8";
 
 
@@ -6,7 +8,8 @@ sendo que a borda faça parte da pagina*/
 @media screen and (min-width: 768px) and (max-width: 992px) {
 
     body {
-        /* background-image: linear-gradient(to top, #49a09d, #ff0000); */
+        background-image: linear-gradient(to top, #ec0606, #5f2c82);
+       background-image: url(./velocidade.png);
     }
 
     section#login {
@@ -28,7 +31,7 @@ sendo que a borda faça parte da pagina*/
 
 @media screen and (min-width: 992px) {
     body {
-        /* background-image: linear-gradient(to top, #49a09d, #e63d0fdd); */
+        background-image: linear-gradient(to top, #00000000, #00000000);
     }
 
     section#login {
